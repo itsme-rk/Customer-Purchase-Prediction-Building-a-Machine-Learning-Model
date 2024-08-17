@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Prediction Form</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <h2>Input Features</h2>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="typeofcontact">Type of Contact</label>
+                <select class="form-control" id="typeofcontact" name="typeofcontact" required>
+                    <option value="" disabled selected>Select Type of Contact</option>
+                    <option value="Self Enquiry">Self Enquiry</option>
+                    <option value="Company Invited">Company Invited</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="citytier">City Tier</label>
+                <select class="form-control" id="citytier" name="citytier" required>
+                    <option value="" disabled selected>Select City Tier</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="durationofpitch">Duration of Pitch</label>
+                <input type="number" step="0.1" class="form-control" id="durationofpitch" name="durationofpitch" placeholder="Enter Duration of Pitch" required>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <select class="form-control" id="occupation" name="occupation" required>
+                    <option value="" disabled selected>Select Occupation</option>
+                    <option value="Salaried">Salaried</option>
+                    <option value="Free Lancer">Free Lancer</option>
+                    <option value="Small Business">Small Business</option>
+                    <option value="Large Business">Large Business</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" name="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="numberoffollowups">Number of Follow-ups</label>
+                <input type="number" class="form-control" id="numberoffollowups" name="numberoffollowups" placeholder="Enter Number of Follow-ups" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productpitched">Product Pitched</label>
+                <select class="form-control" id="productpitched" name="productpitched" required>
+                    <option value="" disabled selected>Select Product Pitched</option>
+                    <option value="Deluxe">Deluxe</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Super Deluxe">Super Deluxe</option>
+                    <option value="King">King</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredpropertystar">Preferred Property Star</label>
+                <select class="form-control" id="preferredpropertystar" name="preferredpropertystar" required>
+                    <option value="" disabled selected>Select Preferred Property Star</option>
+                    <option value="3.0">3.0</option>
+                    <option value="4.0">4.0</option>
+                    <option value="5.0">5.0</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="maritalstatus">Marital Status</label>
+                <select class="form-control" id="maritalstatus" name="maritalstatus" required>
+                    <option value="" disabled selected>Select Marital Status</option>
+                    <option value="Unmarried">Unmarried</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Married">Married</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="numberoftrips">Number of Trips</label>
+                <input type="number" class="form-control" id="numberoftrips" name="numberoftrips" placeholder="Enter Number of Trips" required>
+            </div>
+
+            <div class="form-group">
+                <label for="passport">Passport</label>
+                <select class="form-control" id="passport" name="passport" required>
+                    <option value="" disabled selected>Select Passport Status</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pitchsatisfactionscore">Pitch Satisfaction Score</label>
+                <input type="number" class="form-control" id="pitchsatisfactionscore" name="pitchsatisfactionscore" placeholder="Enter Pitch Satisfaction Score" required>
+            </div>
+
+            <div class="form-group">
+                <label for="owncar">Own Car</label>
+                <select class="form-control" id="owncar" name="owncar" required>
+                    <option value="" disabled selected>Select Own Car Status</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <select class="form-control" id="designation" name="designation" required>
+                    <option value="" disabled selected>Select Designation</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Executive">Executive</option>
+                    <option value="Senior Manager">Senior Manager</option>
+                    <option value="AVP">AVP</option>
+                    <option value="VP">VP</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="monthlyincome">Monthly Income</label>
+                <input type="number" step="0.01" class="form-control" id="monthlyincome" name="monthlyincome" placeholder="Enter Monthly Income" required>
+            </div>
+
+            <div class="form-group">
+                <label for="totalvisiting">Total Visiting</label>
+                <input type="number" class="form-control" id="totalvisiting" name="totalvisiting" placeholder="Enter Total Visiting" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if results is not none %}
+            <h2 class="mt-5">Prediction Result: {{ results }}</h2>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
