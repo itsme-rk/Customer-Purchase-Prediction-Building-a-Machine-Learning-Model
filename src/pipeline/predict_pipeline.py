@@ -44,7 +44,8 @@ class CustomData:
                  OwnCar: int,
                  Designation: str,
                  MonthlyIncome: float,
-                 TotalVisiting: int):
+                 NumberOfPersonVisiting: int,
+                 NumberOfChildrenVisiting:int):
 
         self.Age = Age
         self.TypeofContact = TypeofContact
@@ -62,7 +63,8 @@ class CustomData:
         self.OwnCar = OwnCar
         self.Designation = Designation
         self.MonthlyIncome = MonthlyIncome
-        self.TotalVisiting = TotalVisiting
+        self.NumberOfPersonVisiting = NumberOfPersonVisiting
+        self.NumberOfChildrenVisiting = NumberOfChildrenVisiting        
 
     def get_data_as_data_frame(self):
         try:
@@ -83,7 +85,8 @@ class CustomData:
                 "OwnCar": [self.OwnCar],
                 "Designation": [self.Designation],
                 "MonthlyIncome": [self.MonthlyIncome],
-                "TotalVisiting": [self.TotalVisiting],
+                "NumberOfPersonVisiting": [self.NumberOfPersonVisiting],
+                "NumberOfChildrenVisiting": [self.NumberOfChildrenVisiting],
             }
 
             return pd.DataFrame(custom_data_input_dict)

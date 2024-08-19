@@ -37,7 +37,8 @@ def predict_datapoint():
             OwnCar=int(request.form.get('owncar')),
             Designation=request.form.get('designation'),
             MonthlyIncome=float(request.form.get('monthlyincome')),
-            TotalVisiting=int(request.form.get('totalvisiting'))
+            NumberOfPersonVisiting=int(request.form.get('NumberOfPersonVisiting')),
+            NumberOfChildrenVisiting=int(request.form.get('NumberOfChildrenVisiting'))            
 
         )
         pred_df=data.get_data_as_data_frame()

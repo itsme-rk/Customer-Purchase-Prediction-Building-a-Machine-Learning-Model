@@ -114,7 +114,7 @@
 
             <div class="form-group">
                 <label for="pitchsatisfactionscore">Pitch Satisfaction Score</label>
-                <input type="number" class="form-control" id="pitchsatisfactionscore" name="pitchsatisfactionscore" placeholder="Enter Pitch Satisfaction Score" required>
+                <input type="number" class="form-control" id="pitchsatisfactionscore" name="pitchesatisfactionscore" placeholder="Enter Pitch Satisfaction Score" required>
             </div>
 
             <div class="form-group">
@@ -144,15 +144,20 @@
             </div>
 
             <div class="form-group">
-                <label for="totalvisiting">Total Visiting</label>
-                <input type="number" class="form-control" id="totalvisiting" name="totalvisiting" placeholder="Enter Total Visiting" required>
+                <label for="NumberOfPersonVisiting">Persons Visiting</label>
+                <input type="number" class="form-control" id="NumberOfPersonVisiting" name="NumberOfPersonVisiting" placeholder="Enter number of person Visiting" required>
+            </div>
+
+            <div class="form-group">
+                <label for="NumberOfChildrenVisiting">Children  Visiting</label>
+                <input type="number" class="form-control" id="NumberOfChildrenVisiting" name="NumberOfChildrenVisiting" placeholder="Enter number of childern Visiting" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Predict</button>
         </form>
 
         {% if results is not none %}
-            <h2 class="mt-5">Prediction Result: {{ results }}</h2>
+            <h2 class="mt-5">Prediction Result: {{results}}</h2>
         {% endif %}
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

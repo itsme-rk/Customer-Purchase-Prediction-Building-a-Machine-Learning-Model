@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -32,7 +32,7 @@ class DataTransformation:
 
             numerical_columns = ["Age", "CityTier", "DurationOfPitch", "NumberOfFollowups", "PreferredPropertyStar", 
                                  "NumberOfTrips", "Passport", "PitchSatisfactionScore", "OwnCar", "MonthlyIncome", 
-                                 "TotalVisiting"]
+                                 "NumberOfChildrenVisiting","NumberOfPersonVisiting"]
             categorical_columns = [
                 "TypeofContact",
                 "Occupation",
@@ -92,8 +92,8 @@ class DataTransformation:
 
             target_column_name="ProdTaken"
             numerical_columns = ["Age", "CityTier", "DurationOfPitch", "NumberOfFollowups", "PreferredPropertyStar", 
-                                 "NumberOfTrips", "Passport", "PitchSatisfactionScore", "OwnCar", "MonthlyIncome", 
-                                 "TotalVisiting"]
+                                 "NumberOfTrips", "Passport", "PitchSatisfactionScore", "OwnCar", "MonthlyIncome", "NumberOfChildrenVisiting",
+                                 "NumberOfPersonVisiting"]
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
